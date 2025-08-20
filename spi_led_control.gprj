@@ -1,0 +1,28 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2A-18" pn="GW2A-LV18PG256C8/I7">gw2a18-002</Device>
+    <FileList>
+        <File path="src/drivers/spi_master/spi_master.v" type="file.verilog" enable="1"/>
+        <File path="src/drivers/spi_slave_8.sv" type="file.verilog" enable="1"/>
+        <File path="src/drivers/spi_stream_bridge.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/cmd/led_cmd_pkg.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/codecs/codec_led.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/formatters/tx_arbiter.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/formatters/tx_formatter_led.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/framings/framing_pkg.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/interfaces/cmd_if_led.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/interfaces/stream_if.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/messages/msg_led.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/parsers/rx_parser_led.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/parsers/rx_router.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/protocol_rx.sv" type="file.verilog" enable="1"/>
+        <File path="src/protocol/protocol_tx.sv" type="file.verilog" enable="1"/>
+        <File path="src/services/led_service.sv" type="file.verilog" enable="1"/>
+        <File path="src/services/main_service.sv" type="file.verilog" enable="1"/>
+        <File path="src/top/top_led_spi.sv" type="file.verilog" enable="1"/>
+        <File path="src/spi_led_control.cst" type="file.cst" enable="1"/>
+    </FileList>
+</Project>

@@ -1,0 +1,114 @@
+[
+ {
+  "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
+  "InstLine" : 408,
+  "InstName" : "SPI_MASTER_Top",
+  "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
+  "ModuleLine" : 408,
+  "ModuleName" : "SPI_MASTER_Top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
+    "InstLine" : 599,
+    "InstName" : "u_spi_master",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "~spi_master.SPI_MASTER_Top"
+   }
+  ]
+ },
+ {
+  "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+  "InstLine" : 8,
+  "InstName" : "top_led_spi",
+  "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+  "ModuleLine" : 8,
+  "ModuleName" : "top_led_spi",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+    "InstLine" : 21,
+    "InstName" : "u_spi",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_slave_8.sv",
+    "ModuleLine" : 20,
+    "ModuleName" : "spi_slave_8"
+   },
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+    "InstLine" : 41,
+    "InstName" : "u_bridge",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_stream_bridge.sv",
+    "ModuleLine" : 4,
+    "ModuleName" : "spi_stream_bridge"
+   },
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+    "InstLine" : 50,
+    "InstName" : "u_proto_rx",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_rx.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "protocol_rx",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_rx.sv",
+      "InstLine" : 37,
+      "InstName" : "u_router",
+      "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/parsers/rx_router.sv",
+      "ModuleLine" : 9,
+      "ModuleName" : "rx_router"
+     },
+     {
+      "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_rx.sv",
+      "InstLine" : 52,
+      "InstName" : "G_LED_PARSER.u_p_led",
+      "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/parsers/rx_parser_led.sv",
+      "ModuleLine" : 11,
+      "ModuleName" : "rx_parser_led"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+    "InstLine" : 56,
+    "InstName" : "u_proto_tx",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_tx.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "protocol_tx",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_tx.sv",
+      "InstLine" : 33,
+      "InstName" : "G_LED_FMT.u_fmt_led",
+      "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/formatters/tx_formatter_led.sv",
+      "ModuleLine" : 11,
+      "ModuleName" : "tx_formatter_led"
+     },
+     {
+      "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_tx.sv",
+      "InstLine" : 47,
+      "InstName" : "u_arb",
+      "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/formatters/tx_arbiter.sv",
+      "ModuleLine" : 4,
+      "ModuleName" : "tx_arbiter"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+    "InstLine" : 58,
+    "InstName" : "u_main",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/services/main_service.sv",
+    "ModuleLine" : 8,
+    "ModuleName" : "main_service"
+   },
+   {
+    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+    "InstLine" : 63,
+    "InstName" : "u_led",
+    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/services/led_service.sv",
+    "ModuleLine" : 4,
+    "ModuleName" : "led_service"
+   }
+  ]
+ }
+]

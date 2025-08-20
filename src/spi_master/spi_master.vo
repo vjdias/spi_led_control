@@ -1,0 +1,1175 @@
+//Copyright (C)2014-2025 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-PnR Verilog Simulation Model file
+//Tool Version: V1.9.11.01 (64-bit)
+//Created Time: Sun Aug 17 11:29:47 2025
+
+`timescale 100 ps/100 ps
+module SPI_MASTER_Top(
+	I_CLK,
+	I_RESETN,
+	I_TX_EN,
+	I_WADDR,
+	I_WDATA,
+	I_RX_EN,
+	I_RADDR,
+	MISO_MASTER,
+	MOSI_SLAVE,
+	SS_N_SLAVE,
+	SCLK_SLAVE,
+	O_RDATA,
+	O_SPI_INT,
+	MOSI_MASTER,
+	SS_N_MASTER,
+	SCLK_MASTER,
+	MISO_SLAVE
+);
+input I_CLK;
+input I_RESETN;
+input I_TX_EN;
+input [2:0] I_WADDR;
+input [7:0] I_WDATA;
+input I_RX_EN;
+input [2:0] I_RADDR;
+input MISO_MASTER;
+input MOSI_SLAVE;
+input SS_N_SLAVE;
+input SCLK_SLAVE;
+output [7:0] O_RDATA;
+output O_SPI_INT;
+output MOSI_MASTER;
+output [0:0] SS_N_MASTER;
+output SCLK_MASTER;
+output MISO_SLAVE;
+wire GND;
+wire I_CLK;
+wire [2:0] I_RADDR;
+wire I_RESETN;
+wire I_RX_EN;
+wire I_TX_EN;
+wire [2:0] I_WADDR;
+wire [7:0] I_WDATA;
+wire MISO_MASTER;
+wire MISO_SLAVE;
+wire MOSI_MASTER;
+wire MOSI_SLAVE;
+wire [7:0] O_RDATA;
+wire O_SPI_INT;
+wire SCLK_MASTER;
+wire SCLK_SLAVE;
+wire [0:0] SS_N_MASTER;
+wire SS_N_SLAVE;
+wire VCC;
+wire \u_spi_master/n84_13 ;
+wire \u_spi_master/n84_14 ;
+wire \u_spi_master/n85_13 ;
+wire \u_spi_master/n85_14 ;
+wire \u_spi_master/n86_13 ;
+wire \u_spi_master/n86_14 ;
+wire \u_spi_master/n87_13 ;
+wire \u_spi_master/n87_14 ;
+wire \u_spi_master/n88_13 ;
+wire \u_spi_master/n88_14 ;
+wire \u_spi_master/n331_20 ;
+wire \u_spi_master/n331_21 ;
+wire \u_spi_master/n331_22 ;
+wire \u_spi_master/n331_23 ;
+wire \u_spi_master/n485_4 ;
+wire \u_spi_master/n492_3 ;
+wire \u_spi_master/n500_3 ;
+wire \u_spi_master/n185_4 ;
+wire \u_spi_master/n339_4 ;
+wire \u_spi_master/n409_3 ;
+wire \u_spi_master/reg_roe_8 ;
+wire \u_spi_master/reg_tmt_8 ;
+wire \u_spi_master/n351_6 ;
+wire \u_spi_master/n349_6 ;
+wire \u_spi_master/n348_6 ;
+wire \u_spi_master/n197_6 ;
+wire \u_spi_master/n195_6 ;
+wire \u_spi_master/n194_6 ;
+wire \u_spi_master/O_SPI_INT_d_3 ;
+wire \u_spi_master/O_SPI_INT_d_4 ;
+wire \u_spi_master/n185_5 ;
+wire \u_spi_master/n339_5 ;
+wire \u_spi_master/reg_rrdy_9 ;
+wire \u_spi_master/reg_roe_9 ;
+wire \u_spi_master/reg_data_out_0_6 ;
+wire \u_spi_master/reg_data_out_1_6 ;
+wire \u_spi_master/reg_data_out_1_7 ;
+wire \u_spi_master/reg_data_out_7_6 ;
+wire \u_spi_master/reg_data_out_7_7 ;
+wire \u_spi_master/reg_data_out_0_7 ;
+wire \u_spi_master/reg_data_out_0_8 ;
+wire \u_spi_master/reg_toe_10 ;
+wire \u_spi_master/n248_5 ;
+wire \u_spi_master/n399_8 ;
+wire \u_spi_master/n196_12 ;
+wire \u_spi_master/rx_data_cnt_5_12 ;
+wire \u_spi_master/n198_9 ;
+wire \u_spi_master/n199_10 ;
+wire \u_spi_master/n231_6 ;
+wire \u_spi_master/n231_8 ;
+wire \u_spi_master/n350_9 ;
+wire \u_spi_master/tx_data_cnt_5_12 ;
+wire \u_spi_master/n352_9 ;
+wire \u_spi_master/n353_10 ;
+wire \u_spi_master/rx_done ;
+wire \u_spi_master/rx_done_flip1 ;
+wire \u_spi_master/rx_done_flip2 ;
+wire \u_spi_master/rx_latch_flag ;
+wire \u_spi_master/tx_done ;
+wire \u_spi_master/tx_done_flip1 ;
+wire \u_spi_master/tx_done_flip2 ;
+wire \u_spi_master/reg_roe ;
+wire \u_spi_master/reg_tmt ;
+wire \u_spi_master/reg_toe ;
+wire \u_spi_master/reg_rrdy ;
+wire \u_spi_master/n84_16 ;
+wire \u_spi_master/n85_16 ;
+wire \u_spi_master/n86_16 ;
+wire \u_spi_master/n87_16 ;
+wire \u_spi_master/n88_16 ;
+wire \u_spi_master/n331_25 ;
+wire \u_spi_master/n331_27 ;
+wire \u_spi_master/n331_29 ;
+wire \u_spi_master/n14_6 ;
+wire \u_spi_master/rx_shift_data_7_7 ;
+wire [7:0] \u_spi_master/reg_data_out ;
+wire [7:0] \u_spi_master/reg_txdata ;
+wire [7:0] \u_spi_master/reg_control ;
+wire [0:0] \u_spi_master/reg_ssmask ;
+wire [7:0] \u_spi_master/reg_rxdata ;
+wire [7:0] \u_spi_master/rx_shift_data ;
+wire [5:0] \u_spi_master/rx_data_cnt ;
+wire [5:0] \u_spi_master/tx_data_cnt ;
+VCC VCC_cZ (
+  .V(VCC)
+);
+GND GND_cZ (
+  .G(GND)
+);
+GSR GSR (
+	.GSRI(VCC)
+);
+LUT3 \u_spi_master/n84_s12  (
+	.I0(\u_spi_master/reg_rxdata [6]),
+	.I1(\u_spi_master/reg_txdata [6]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n84_13 )
+);
+defparam \u_spi_master/n84_s12 .INIT=8'hCA;
+LUT3 \u_spi_master/n84_s13  (
+	.I0(\u_spi_master/reg_rrdy ),
+	.I1(\u_spi_master/reg_control [6]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n84_14 )
+);
+defparam \u_spi_master/n84_s13 .INIT=8'hCA;
+LUT3 \u_spi_master/n85_s12  (
+	.I0(\u_spi_master/reg_rxdata [5]),
+	.I1(\u_spi_master/reg_txdata [5]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n85_13 )
+);
+defparam \u_spi_master/n85_s12 .INIT=8'hCA;
+LUT3 \u_spi_master/n85_s13  (
+	.I0(\u_spi_master/reg_tmt ),
+	.I1(\u_spi_master/reg_control [5]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n85_14 )
+);
+defparam \u_spi_master/n85_s13 .INIT=8'hCA;
+LUT3 \u_spi_master/n86_s12  (
+	.I0(\u_spi_master/reg_rxdata [4]),
+	.I1(\u_spi_master/reg_txdata [4]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n86_13 )
+);
+defparam \u_spi_master/n86_s12 .INIT=8'hCA;
+LUT3 \u_spi_master/n86_s13  (
+	.I0(\u_spi_master/reg_tmt ),
+	.I1(\u_spi_master/reg_control [4]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n86_14 )
+);
+defparam \u_spi_master/n86_s13 .INIT=8'hCA;
+LUT3 \u_spi_master/n87_s12  (
+	.I0(\u_spi_master/reg_rxdata [3]),
+	.I1(\u_spi_master/reg_txdata [3]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n87_13 )
+);
+defparam \u_spi_master/n87_s12 .INIT=8'hCA;
+LUT3 \u_spi_master/n87_s13  (
+	.I0(\u_spi_master/reg_toe ),
+	.I1(\u_spi_master/reg_control [3]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n87_14 )
+);
+defparam \u_spi_master/n87_s13 .INIT=8'hCA;
+LUT3 \u_spi_master/n88_s12  (
+	.I0(\u_spi_master/reg_rxdata [2]),
+	.I1(\u_spi_master/reg_txdata [2]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n88_13 )
+);
+defparam \u_spi_master/n88_s12 .INIT=8'hCA;
+LUT3 \u_spi_master/n88_s13  (
+	.I0(\u_spi_master/reg_roe ),
+	.I1(\u_spi_master/reg_control [2]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/n88_14 )
+);
+defparam \u_spi_master/n88_s13 .INIT=8'hCA;
+LUT3 \u_spi_master/n331_s25  (
+	.I0(\u_spi_master/reg_txdata [1]),
+	.I1(\u_spi_master/reg_txdata [0]),
+	.I2(\u_spi_master/tx_data_cnt [0]),
+	.F(\u_spi_master/n331_20 )
+);
+defparam \u_spi_master/n331_s25 .INIT=8'hCA;
+LUT3 \u_spi_master/n331_s24  (
+	.I0(\u_spi_master/reg_txdata [3]),
+	.I1(\u_spi_master/reg_txdata [2]),
+	.I2(\u_spi_master/tx_data_cnt [0]),
+	.F(\u_spi_master/n331_21 )
+);
+defparam \u_spi_master/n331_s24 .INIT=8'hCA;
+LUT3 \u_spi_master/n331_s27  (
+	.I0(\u_spi_master/reg_txdata [5]),
+	.I1(\u_spi_master/reg_txdata [4]),
+	.I2(\u_spi_master/tx_data_cnt [0]),
+	.F(\u_spi_master/n331_22 )
+);
+defparam \u_spi_master/n331_s27 .INIT=8'hCA;
+LUT3 \u_spi_master/n331_s26  (
+	.I0(\u_spi_master/reg_txdata [7]),
+	.I1(\u_spi_master/reg_txdata [6]),
+	.I2(\u_spi_master/tx_data_cnt [0]),
+	.F(\u_spi_master/n331_23 )
+);
+defparam \u_spi_master/n331_s26 .INIT=8'hCA;
+LUT4 \u_spi_master/n485_s0  (
+	.I0(I_WADDR[1]),
+	.I1(I_WADDR[2]),
+	.I2(I_WADDR[0]),
+	.I3(I_TX_EN),
+	.F(\u_spi_master/n485_4 )
+);
+defparam \u_spi_master/n485_s0 .INIT=16'h1000;
+LUT4 \u_spi_master/n492_s0  (
+	.I0(I_WADDR[2]),
+	.I1(I_WADDR[1]),
+	.I2(I_WADDR[0]),
+	.I3(I_TX_EN),
+	.F(\u_spi_master/n492_3 )
+);
+defparam \u_spi_master/n492_s0 .INIT=16'h4000;
+LUT4 \u_spi_master/n500_s0  (
+	.I0(I_WADDR[0]),
+	.I1(I_WADDR[1]),
+	.I2(I_WADDR[2]),
+	.I3(I_TX_EN),
+	.F(\u_spi_master/n500_3 )
+);
+defparam \u_spi_master/n500_s0 .INIT=16'h1000;
+LUT3 \u_spi_master/O_SPI_INT_d_s  (
+	.I0(\u_spi_master/O_SPI_INT_d_3 ),
+	.I1(\u_spi_master/reg_control [5]),
+	.I2(\u_spi_master/O_SPI_INT_d_4 ),
+	.F(O_SPI_INT)
+);
+defparam \u_spi_master/O_SPI_INT_d_s .INIT=8'h4F;
+LUT4 \u_spi_master/n185_s1  (
+	.I0(\u_spi_master/rx_data_cnt [3]),
+	.I1(\u_spi_master/rx_data_cnt [4]),
+	.I2(\u_spi_master/rx_data_cnt [5]),
+	.I3(\u_spi_master/n185_5 ),
+	.F(\u_spi_master/n185_4 )
+);
+defparam \u_spi_master/n185_s1 .INIT=16'h0100;
+LUT4 \u_spi_master/n339_s1  (
+	.I0(\u_spi_master/tx_data_cnt [3]),
+	.I1(\u_spi_master/tx_data_cnt [4]),
+	.I2(\u_spi_master/tx_data_cnt [5]),
+	.I3(\u_spi_master/n339_5 ),
+	.F(\u_spi_master/n339_4 )
+);
+defparam \u_spi_master/n339_s1 .INIT=16'h0100;
+LUT2 \u_spi_master/n409_s0  (
+	.I0(\u_spi_master/reg_tmt ),
+	.I1(\u_spi_master/n485_4 ),
+	.F(\u_spi_master/n409_3 )
+);
+defparam \u_spi_master/n409_s0 .INIT=4'h4;
+LUT3 \u_spi_master/reg_roe_s3  (
+	.I0(I_WDATA[2]),
+	.I1(\u_spi_master/reg_roe_9 ),
+	.I2(\u_spi_master/n248_5 ),
+	.F(\u_spi_master/reg_roe_8 )
+);
+defparam \u_spi_master/reg_roe_s3 .INIT=8'hF8;
+LUT3 \u_spi_master/reg_tmt_s3  (
+	.I0(\u_spi_master/tx_done_flip2 ),
+	.I1(\u_spi_master/tx_done_flip1 ),
+	.I2(\u_spi_master/n485_4 ),
+	.F(\u_spi_master/reg_tmt_8 )
+);
+defparam \u_spi_master/reg_tmt_s3 .INIT=8'hF4;
+LUT3 \u_spi_master/n351_s2  (
+	.I0(\u_spi_master/tx_data_cnt [0]),
+	.I1(\u_spi_master/tx_data_cnt [1]),
+	.I2(\u_spi_master/tx_data_cnt [2]),
+	.F(\u_spi_master/n351_6 )
+);
+defparam \u_spi_master/n351_s2 .INIT=8'h78;
+LUT3 \u_spi_master/n349_s2  (
+	.I0(\u_spi_master/tx_data_cnt [3]),
+	.I1(\u_spi_master/n339_5 ),
+	.I2(\u_spi_master/tx_data_cnt [4]),
+	.F(\u_spi_master/n349_6 )
+);
+defparam \u_spi_master/n349_s2 .INIT=8'h78;
+LUT4 \u_spi_master/n348_s2  (
+	.I0(\u_spi_master/tx_data_cnt [3]),
+	.I1(\u_spi_master/tx_data_cnt [4]),
+	.I2(\u_spi_master/n339_5 ),
+	.I3(\u_spi_master/tx_data_cnt [5]),
+	.F(\u_spi_master/n348_6 )
+);
+defparam \u_spi_master/n348_s2 .INIT=16'h7F80;
+LUT3 \u_spi_master/n197_s2  (
+	.I0(\u_spi_master/rx_data_cnt [0]),
+	.I1(\u_spi_master/rx_data_cnt [1]),
+	.I2(\u_spi_master/rx_data_cnt [2]),
+	.F(\u_spi_master/n197_6 )
+);
+defparam \u_spi_master/n197_s2 .INIT=8'h78;
+LUT3 \u_spi_master/n195_s2  (
+	.I0(\u_spi_master/rx_data_cnt [3]),
+	.I1(\u_spi_master/n185_5 ),
+	.I2(\u_spi_master/rx_data_cnt [4]),
+	.F(\u_spi_master/n195_6 )
+);
+defparam \u_spi_master/n195_s2 .INIT=8'h78;
+LUT4 \u_spi_master/n194_s2  (
+	.I0(\u_spi_master/rx_data_cnt [3]),
+	.I1(\u_spi_master/rx_data_cnt [4]),
+	.I2(\u_spi_master/n185_5 ),
+	.I3(\u_spi_master/rx_data_cnt [5]),
+	.F(\u_spi_master/n194_6 )
+);
+defparam \u_spi_master/n194_s2 .INIT=16'h7F80;
+LUT2 \u_spi_master/reg_data_out_0_s1  (
+	.I0(\u_spi_master/reg_data_out_0_6 ),
+	.I1(I_RESETN),
+	.F(\u_spi_master/reg_data_out [0])
+);
+defparam \u_spi_master/reg_data_out_0_s1 .INIT=4'h4;
+LUT4 \u_spi_master/reg_data_out_1_s1  (
+	.I0(\u_spi_master/reg_rxdata [1]),
+	.I1(I_RADDR[0]),
+	.I2(\u_spi_master/reg_data_out_1_6 ),
+	.I3(\u_spi_master/reg_data_out_1_7 ),
+	.F(\u_spi_master/reg_data_out [1])
+);
+defparam \u_spi_master/reg_data_out_1_s1 .INIT=16'h2C00;
+LUT4 \u_spi_master/reg_data_out_7_s1  (
+	.I0(\u_spi_master/reg_data_out_7_6 ),
+	.I1(\u_spi_master/reg_data_out_7_7 ),
+	.I2(I_RADDR[0]),
+	.I3(\u_spi_master/reg_data_out_1_7 ),
+	.F(\u_spi_master/reg_data_out [7])
+);
+defparam \u_spi_master/reg_data_out_7_s1 .INIT=16'h3A00;
+LUT4 \u_spi_master/O_SPI_INT_d_s0  (
+	.I0(\u_spi_master/reg_control [0]),
+	.I1(\u_spi_master/reg_roe ),
+	.I2(\u_spi_master/reg_toe ),
+	.I3(\u_spi_master/reg_control [1]),
+	.F(\u_spi_master/O_SPI_INT_d_3 )
+);
+defparam \u_spi_master/O_SPI_INT_d_s0 .INIT=16'h0777;
+LUT4 \u_spi_master/O_SPI_INT_d_s1  (
+	.I0(\u_spi_master/reg_control [4]),
+	.I1(\u_spi_master/reg_rrdy ),
+	.I2(\u_spi_master/reg_control [3]),
+	.I3(\u_spi_master/reg_tmt ),
+	.F(\u_spi_master/O_SPI_INT_d_4 )
+);
+defparam \u_spi_master/O_SPI_INT_d_s1 .INIT=16'h0777;
+LUT3 \u_spi_master/n185_s2  (
+	.I0(\u_spi_master/rx_data_cnt [0]),
+	.I1(\u_spi_master/rx_data_cnt [1]),
+	.I2(\u_spi_master/rx_data_cnt [2]),
+	.F(\u_spi_master/n185_5 )
+);
+defparam \u_spi_master/n185_s2 .INIT=8'h80;
+LUT3 \u_spi_master/n339_s2  (
+	.I0(\u_spi_master/tx_data_cnt [0]),
+	.I1(\u_spi_master/tx_data_cnt [1]),
+	.I2(\u_spi_master/tx_data_cnt [2]),
+	.F(\u_spi_master/n339_5 )
+);
+defparam \u_spi_master/n339_s2 .INIT=8'h80;
+LUT4 \u_spi_master/reg_rrdy_s4  (
+	.I0(I_RADDR[0]),
+	.I1(I_RADDR[1]),
+	.I2(I_RADDR[2]),
+	.I3(I_RX_EN),
+	.F(\u_spi_master/reg_rrdy_9 )
+);
+defparam \u_spi_master/reg_rrdy_s4 .INIT=16'h0100;
+LUT4 \u_spi_master/reg_roe_s4  (
+	.I0(I_WADDR[0]),
+	.I1(I_WADDR[2]),
+	.I2(I_WADDR[1]),
+	.I3(I_TX_EN),
+	.F(\u_spi_master/reg_roe_9 )
+);
+defparam \u_spi_master/reg_roe_s4 .INIT=16'h1000;
+LUT4 \u_spi_master/reg_data_out_0_s2  (
+	.I0(\u_spi_master/reg_data_out_0_7 ),
+	.I1(\u_spi_master/reg_data_out_0_8 ),
+	.I2(I_RADDR[2]),
+	.I3(I_RADDR[1]),
+	.F(\u_spi_master/reg_data_out_0_6 )
+);
+defparam \u_spi_master/reg_data_out_0_s2 .INIT=16'hFCCA;
+LUT4 \u_spi_master/reg_data_out_1_s2  (
+	.I0(\u_spi_master/reg_txdata [1]),
+	.I1(\u_spi_master/reg_control [1]),
+	.I2(I_RADDR[0]),
+	.I3(I_RADDR[1]),
+	.F(\u_spi_master/reg_data_out_1_6 )
+);
+defparam \u_spi_master/reg_data_out_1_s2 .INIT=16'h305F;
+LUT2 \u_spi_master/reg_data_out_1_s3  (
+	.I0(I_RADDR[2]),
+	.I1(I_RESETN),
+	.F(\u_spi_master/reg_data_out_1_7 )
+);
+defparam \u_spi_master/reg_data_out_1_s3 .INIT=4'h4;
+LUT4 \u_spi_master/reg_data_out_7_s2  (
+	.I0(\u_spi_master/reg_roe ),
+	.I1(\u_spi_master/reg_toe ),
+	.I2(\u_spi_master/reg_rxdata [7]),
+	.I3(I_RADDR[1]),
+	.F(\u_spi_master/reg_data_out_7_6 )
+);
+defparam \u_spi_master/reg_data_out_7_s2 .INIT=16'hEEF0;
+LUT3 \u_spi_master/reg_data_out_7_s3  (
+	.I0(\u_spi_master/reg_txdata [7]),
+	.I1(\u_spi_master/reg_control [7]),
+	.I2(I_RADDR[1]),
+	.F(\u_spi_master/reg_data_out_7_7 )
+);
+defparam \u_spi_master/reg_data_out_7_s3 .INIT=8'h35;
+LUT3 \u_spi_master/reg_data_out_0_s3  (
+	.I0(\u_spi_master/reg_rxdata [0]),
+	.I1(\u_spi_master/reg_txdata [0]),
+	.I2(I_RADDR[0]),
+	.F(\u_spi_master/reg_data_out_0_7 )
+);
+defparam \u_spi_master/reg_data_out_0_s3 .INIT=8'h35;
+LUT4 \u_spi_master/reg_data_out_0_s4  (
+	.I0(\u_spi_master/reg_control [0]),
+	.I1(\u_spi_master/reg_ssmask [0]),
+	.I2(I_RADDR[2]),
+	.I3(I_RADDR[0]),
+	.F(\u_spi_master/reg_data_out_0_8 )
+);
+defparam \u_spi_master/reg_data_out_0_s4 .INIT=16'hF53F;
+LUT4 \u_spi_master/reg_toe_s4  (
+	.I0(I_WDATA[3]),
+	.I1(\u_spi_master/reg_roe_9 ),
+	.I2(\u_spi_master/reg_tmt ),
+	.I3(\u_spi_master/n485_4 ),
+	.F(\u_spi_master/reg_toe_10 )
+);
+defparam \u_spi_master/reg_toe_s4 .INIT=16'h8F88;
+LUT3 \u_spi_master/n248_s1  (
+	.I0(\u_spi_master/reg_rrdy ),
+	.I1(\u_spi_master/rx_done_flip2 ),
+	.I2(\u_spi_master/rx_done_flip1 ),
+	.F(\u_spi_master/n248_5 )
+);
+defparam \u_spi_master/n248_s1 .INIT=8'h20;
+LUT3 \u_spi_master/reg_data_out_6_s2  (
+	.I0(\u_spi_master/n84_16 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_spi_master/reg_data_out [6])
+);
+defparam \u_spi_master/reg_data_out_6_s2 .INIT=8'h20;
+LUT3 \u_spi_master/reg_data_out_5_s2  (
+	.I0(\u_spi_master/n85_16 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_spi_master/reg_data_out [5])
+);
+defparam \u_spi_master/reg_data_out_5_s2 .INIT=8'h20;
+LUT3 \u_spi_master/reg_data_out_4_s2  (
+	.I0(\u_spi_master/n86_16 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_spi_master/reg_data_out [4])
+);
+defparam \u_spi_master/reg_data_out_4_s2 .INIT=8'h20;
+LUT3 \u_spi_master/reg_data_out_3_s2  (
+	.I0(\u_spi_master/n87_16 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_spi_master/reg_data_out [3])
+);
+defparam \u_spi_master/reg_data_out_3_s2 .INIT=8'h20;
+LUT3 \u_spi_master/reg_data_out_2_s2  (
+	.I0(\u_spi_master/n88_16 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_spi_master/reg_data_out [2])
+);
+defparam \u_spi_master/reg_data_out_2_s2 .INIT=8'h20;
+LUT4 \u_spi_master/n399_s3  (
+	.I0(I_WADDR[1]),
+	.I1(I_WADDR[2]),
+	.I2(I_WADDR[0]),
+	.I3(I_TX_EN),
+	.F(\u_spi_master/n399_8 )
+);
+defparam \u_spi_master/n399_s3 .INIT=16'hEFFF;
+LUT4 \u_spi_master/n196_s4  (
+	.I0(SS_N_SLAVE),
+	.I1(\u_spi_master/n185_5 ),
+	.I2(\u_spi_master/n185_4 ),
+	.I3(\u_spi_master/rx_data_cnt [3]),
+	.F(\u_spi_master/n196_12 )
+);
+defparam \u_spi_master/n196_s4 .INIT=16'h0B04;
+LUT2 \u_spi_master/rx_data_cnt_5_s4  (
+	.I0(\u_spi_master/n185_4 ),
+	.I1(SS_N_SLAVE),
+	.F(\u_spi_master/rx_data_cnt_5_12 )
+);
+defparam \u_spi_master/rx_data_cnt_5_s4 .INIT=4'hB;
+LUT4 \u_spi_master/n198_s4  (
+	.I0(\u_spi_master/n185_4 ),
+	.I1(SS_N_SLAVE),
+	.I2(\u_spi_master/rx_data_cnt [0]),
+	.I3(\u_spi_master/rx_data_cnt [1]),
+	.F(\u_spi_master/n198_9 )
+);
+defparam \u_spi_master/n198_s4 .INIT=16'h4FB0;
+LUT3 \u_spi_master/n199_s5  (
+	.I0(\u_spi_master/n185_4 ),
+	.I1(SS_N_SLAVE),
+	.I2(\u_spi_master/rx_data_cnt [0]),
+	.F(\u_spi_master/n199_10 )
+);
+defparam \u_spi_master/n199_s5 .INIT=8'h4B;
+LUT4 \u_spi_master/n231_s2  (
+	.I0(\u_spi_master/rx_done_flip2 ),
+	.I1(\u_spi_master/rx_done_flip1 ),
+	.I2(\u_spi_master/reg_rrdy_9 ),
+	.I3(\u_spi_master/reg_rrdy ),
+	.F(\u_spi_master/n231_6 )
+);
+defparam \u_spi_master/n231_s2 .INIT=16'h4F44;
+LUT2 \u_spi_master/n231_s3  (
+	.I0(\u_spi_master/rx_done_flip2 ),
+	.I1(\u_spi_master/rx_done_flip1 ),
+	.F(\u_spi_master/n231_8 )
+);
+defparam \u_spi_master/n231_s3 .INIT=4'h4;
+LUT4 \u_spi_master/n350_s4  (
+	.I0(SS_N_SLAVE),
+	.I1(\u_spi_master/n339_5 ),
+	.I2(\u_spi_master/n339_4 ),
+	.I3(\u_spi_master/tx_data_cnt [3]),
+	.F(\u_spi_master/n350_9 )
+);
+defparam \u_spi_master/n350_s4 .INIT=16'h0B04;
+LUT2 \u_spi_master/tx_data_cnt_5_s4  (
+	.I0(\u_spi_master/n339_4 ),
+	.I1(SS_N_SLAVE),
+	.F(\u_spi_master/tx_data_cnt_5_12 )
+);
+defparam \u_spi_master/tx_data_cnt_5_s4 .INIT=4'hB;
+LUT4 \u_spi_master/n352_s4  (
+	.I0(SS_N_SLAVE),
+	.I1(\u_spi_master/n339_4 ),
+	.I2(\u_spi_master/tx_data_cnt [0]),
+	.I3(\u_spi_master/tx_data_cnt [1]),
+	.F(\u_spi_master/n352_9 )
+);
+defparam \u_spi_master/n352_s4 .INIT=16'h2FD0;
+LUT3 \u_spi_master/n353_s5  (
+	.I0(\u_spi_master/n339_4 ),
+	.I1(SS_N_SLAVE),
+	.I2(\u_spi_master/tx_data_cnt [0]),
+	.F(\u_spi_master/n353_10 )
+);
+defparam \u_spi_master/n353_s5 .INIT=8'h4B;
+DFFCE \u_spi_master/reg_txdata_6_s0  (
+	.D(I_WDATA[6]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [6])
+);
+defparam \u_spi_master/reg_txdata_6_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_5_s0  (
+	.D(I_WDATA[5]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [5])
+);
+defparam \u_spi_master/reg_txdata_5_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_4_s0  (
+	.D(I_WDATA[4]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [4])
+);
+defparam \u_spi_master/reg_txdata_4_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [3])
+);
+defparam \u_spi_master/reg_txdata_3_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_2_s0  (
+	.D(I_WDATA[2]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [2])
+);
+defparam \u_spi_master/reg_txdata_2_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_1_s0  (
+	.D(I_WDATA[1]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [1])
+);
+defparam \u_spi_master/reg_txdata_1_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [0])
+);
+defparam \u_spi_master/reg_txdata_0_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_7_s0  (
+	.D(I_WDATA[7]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [7])
+);
+defparam \u_spi_master/reg_control_7_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_6_s0  (
+	.D(I_WDATA[6]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [6])
+);
+defparam \u_spi_master/reg_control_6_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_5_s0  (
+	.D(I_WDATA[5]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [5])
+);
+defparam \u_spi_master/reg_control_5_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_4_s0  (
+	.D(I_WDATA[4]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [4])
+);
+defparam \u_spi_master/reg_control_4_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [3])
+);
+defparam \u_spi_master/reg_control_3_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_2_s0  (
+	.D(I_WDATA[2]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [2])
+);
+defparam \u_spi_master/reg_control_2_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_1_s0  (
+	.D(I_WDATA[1]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [1])
+);
+defparam \u_spi_master/reg_control_1_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_control_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n492_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_control [0])
+);
+defparam \u_spi_master/reg_control_0_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_ssmask_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n500_3 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_ssmask [0])
+);
+defparam \u_spi_master/reg_ssmask_0_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_7_s0  (
+	.D(\u_spi_master/reg_data_out [7]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[7])
+);
+defparam \u_spi_master/rdata_7_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_6_s0  (
+	.D(\u_spi_master/reg_data_out [6]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[6])
+);
+defparam \u_spi_master/rdata_6_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_5_s0  (
+	.D(\u_spi_master/reg_data_out [5]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[5])
+);
+defparam \u_spi_master/rdata_5_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_4_s0  (
+	.D(\u_spi_master/reg_data_out [4]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[4])
+);
+defparam \u_spi_master/rdata_4_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_3_s0  (
+	.D(\u_spi_master/reg_data_out [3]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[3])
+);
+defparam \u_spi_master/rdata_3_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_2_s0  (
+	.D(\u_spi_master/reg_data_out [2]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[2])
+);
+defparam \u_spi_master/rdata_2_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_1_s0  (
+	.D(\u_spi_master/reg_data_out [1]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[1])
+);
+defparam \u_spi_master/rdata_1_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rdata_0_s0  (
+	.D(\u_spi_master/reg_data_out [0]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(O_RDATA[0])
+);
+defparam \u_spi_master/rdata_0_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_7_s0  (
+	.D(\u_spi_master/rx_shift_data [7]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [7])
+);
+defparam \u_spi_master/reg_rxdata_7_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_6_s0  (
+	.D(\u_spi_master/rx_shift_data [6]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [6])
+);
+defparam \u_spi_master/reg_rxdata_6_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_5_s0  (
+	.D(\u_spi_master/rx_shift_data [5]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [5])
+);
+defparam \u_spi_master/reg_rxdata_5_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_4_s0  (
+	.D(\u_spi_master/rx_shift_data [4]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [4])
+);
+defparam \u_spi_master/reg_rxdata_4_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_3_s0  (
+	.D(\u_spi_master/rx_shift_data [3]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [3])
+);
+defparam \u_spi_master/reg_rxdata_3_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_2_s0  (
+	.D(\u_spi_master/rx_shift_data [2]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [2])
+);
+defparam \u_spi_master/reg_rxdata_2_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_1_s0  (
+	.D(\u_spi_master/rx_shift_data [1]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [1])
+);
+defparam \u_spi_master/reg_rxdata_1_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_rxdata_0_s0  (
+	.D(\u_spi_master/rx_shift_data [0]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/rx_latch_flag ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rxdata [0])
+);
+defparam \u_spi_master/reg_rxdata_0_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_7_s0  (
+	.D(\u_spi_master/rx_shift_data [6]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [7])
+);
+defparam \u_spi_master/rx_shift_data_7_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_6_s0  (
+	.D(\u_spi_master/rx_shift_data [5]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [6])
+);
+defparam \u_spi_master/rx_shift_data_6_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_5_s0  (
+	.D(\u_spi_master/rx_shift_data [4]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [5])
+);
+defparam \u_spi_master/rx_shift_data_5_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_4_s0  (
+	.D(\u_spi_master/rx_shift_data [3]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [4])
+);
+defparam \u_spi_master/rx_shift_data_4_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_3_s0  (
+	.D(\u_spi_master/rx_shift_data [2]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [3])
+);
+defparam \u_spi_master/rx_shift_data_3_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_2_s0  (
+	.D(\u_spi_master/rx_shift_data [1]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [2])
+);
+defparam \u_spi_master/rx_shift_data_2_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_1_s0  (
+	.D(\u_spi_master/rx_shift_data [0]),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [1])
+);
+defparam \u_spi_master/rx_shift_data_1_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_shift_data_0_s0  (
+	.D(MOSI_SLAVE),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_shift_data_7_7 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_shift_data [0])
+);
+defparam \u_spi_master/rx_shift_data_0_s0 .INIT=1'b0;
+DFFC \u_spi_master/rx_done_s0  (
+	.D(\u_spi_master/n185_4 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_done )
+);
+defparam \u_spi_master/rx_done_s0 .INIT=1'b0;
+DFFC \u_spi_master/rx_done_flip1_s0  (
+	.D(\u_spi_master/rx_done ),
+	.CLK(I_CLK),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_done_flip1 )
+);
+defparam \u_spi_master/rx_done_flip1_s0 .INIT=1'b0;
+DFFC \u_spi_master/rx_done_flip2_s0  (
+	.D(\u_spi_master/rx_done_flip1 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_done_flip2 )
+);
+defparam \u_spi_master/rx_done_flip2_s0 .INIT=1'b0;
+DFFC \u_spi_master/rx_latch_flag_s0  (
+	.D(\u_spi_master/n231_8 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_latch_flag )
+);
+defparam \u_spi_master/rx_latch_flag_s0 .INIT=1'b0;
+DFFC \u_spi_master/MISO_SLAVE_s0  (
+	.D(\u_spi_master/n331_29 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(MISO_SLAVE)
+);
+defparam \u_spi_master/MISO_SLAVE_s0 .INIT=1'b0;
+DFFC \u_spi_master/tx_done_s0  (
+	.D(\u_spi_master/n339_4 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_done )
+);
+defparam \u_spi_master/tx_done_s0 .INIT=1'b0;
+DFFC \u_spi_master/tx_done_flip1_s0  (
+	.D(\u_spi_master/tx_done ),
+	.CLK(I_CLK),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_done_flip1 )
+);
+defparam \u_spi_master/tx_done_flip1_s0 .INIT=1'b0;
+DFFC \u_spi_master/tx_done_flip2_s0  (
+	.D(\u_spi_master/tx_done_flip1 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_done_flip2 )
+);
+defparam \u_spi_master/tx_done_flip2_s0 .INIT=1'b0;
+DFFCE \u_spi_master/reg_txdata_7_s0  (
+	.D(I_WDATA[7]),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/n485_4 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_txdata [7])
+);
+defparam \u_spi_master/reg_txdata_7_s0 .INIT=1'b0;
+DFFCE \u_spi_master/rx_data_cnt_5_s1  (
+	.D(\u_spi_master/n194_6 ),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_data_cnt_5_12 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_data_cnt [5])
+);
+defparam \u_spi_master/rx_data_cnt_5_s1 .INIT=1'b0;
+DFFCE \u_spi_master/rx_data_cnt_4_s1  (
+	.D(\u_spi_master/n195_6 ),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_data_cnt_5_12 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_data_cnt [4])
+);
+defparam \u_spi_master/rx_data_cnt_4_s1 .INIT=1'b0;
+DFFCE \u_spi_master/rx_data_cnt_2_s1  (
+	.D(\u_spi_master/n197_6 ),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/rx_data_cnt_5_12 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_data_cnt [2])
+);
+defparam \u_spi_master/rx_data_cnt_2_s1 .INIT=1'b0;
+DFFCE \u_spi_master/reg_roe_s1  (
+	.D(\u_spi_master/n248_5 ),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/reg_roe_8 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_roe )
+);
+defparam \u_spi_master/reg_roe_s1 .INIT=1'b0;
+DFFCE \u_spi_master/tx_data_cnt_5_s1  (
+	.D(\u_spi_master/n348_6 ),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/tx_data_cnt_5_12 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_data_cnt [5])
+);
+defparam \u_spi_master/tx_data_cnt_5_s1 .INIT=1'b0;
+DFFCE \u_spi_master/tx_data_cnt_4_s1  (
+	.D(\u_spi_master/n349_6 ),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/tx_data_cnt_5_12 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_data_cnt [4])
+);
+defparam \u_spi_master/tx_data_cnt_4_s1 .INIT=1'b0;
+DFFCE \u_spi_master/tx_data_cnt_2_s1  (
+	.D(\u_spi_master/n351_6 ),
+	.CLK(SCLK_SLAVE),
+	.CE(\u_spi_master/tx_data_cnt_5_12 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_data_cnt [2])
+);
+defparam \u_spi_master/tx_data_cnt_2_s1 .INIT=1'b0;
+DFFPE \u_spi_master/reg_tmt_s1  (
+	.D(\u_spi_master/n399_8 ),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/reg_tmt_8 ),
+	.PRESET(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_tmt )
+);
+defparam \u_spi_master/reg_tmt_s1 .INIT=1'b1;
+DFFCE \u_spi_master/reg_toe_s1  (
+	.D(\u_spi_master/n409_3 ),
+	.CLK(I_CLK),
+	.CE(\u_spi_master/reg_toe_10 ),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_toe )
+);
+defparam \u_spi_master/reg_toe_s1 .INIT=1'b0;
+DFFC \u_spi_master/rx_data_cnt_3_s3  (
+	.D(\u_spi_master/n196_12 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_data_cnt [3])
+);
+defparam \u_spi_master/rx_data_cnt_3_s3 .INIT=1'b0;
+DFFC \u_spi_master/rx_data_cnt_1_s3  (
+	.D(\u_spi_master/n198_9 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_data_cnt [1])
+);
+defparam \u_spi_master/rx_data_cnt_1_s3 .INIT=1'b0;
+DFFC \u_spi_master/rx_data_cnt_0_s3  (
+	.D(\u_spi_master/n199_10 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/rx_data_cnt [0])
+);
+defparam \u_spi_master/rx_data_cnt_0_s3 .INIT=1'b0;
+DFFC \u_spi_master/reg_rrdy_s6  (
+	.D(\u_spi_master/n231_6 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/reg_rrdy )
+);
+defparam \u_spi_master/reg_rrdy_s6 .INIT=1'b0;
+DFFC \u_spi_master/tx_data_cnt_3_s3  (
+	.D(\u_spi_master/n350_9 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_data_cnt [3])
+);
+defparam \u_spi_master/tx_data_cnt_3_s3 .INIT=1'b0;
+DFFC \u_spi_master/tx_data_cnt_1_s3  (
+	.D(\u_spi_master/n352_9 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_data_cnt [1])
+);
+defparam \u_spi_master/tx_data_cnt_1_s3 .INIT=1'b0;
+DFFC \u_spi_master/tx_data_cnt_0_s3  (
+	.D(\u_spi_master/n353_10 ),
+	.CLK(SCLK_SLAVE),
+	.CLEAR(\u_spi_master/n14_6 ),
+	.Q(\u_spi_master/tx_data_cnt [0])
+);
+defparam \u_spi_master/tx_data_cnt_0_s3 .INIT=1'b0;
+MUX2_LUT5 \u_spi_master/n84_s11  (
+	.I0(\u_spi_master/n84_13 ),
+	.I1(\u_spi_master/n84_14 ),
+	.S0(I_RADDR[1]),
+	.O(\u_spi_master/n84_16 )
+);
+MUX2_LUT5 \u_spi_master/n85_s11  (
+	.I0(\u_spi_master/n85_13 ),
+	.I1(\u_spi_master/n85_14 ),
+	.S0(I_RADDR[1]),
+	.O(\u_spi_master/n85_16 )
+);
+MUX2_LUT5 \u_spi_master/n86_s11  (
+	.I0(\u_spi_master/n86_13 ),
+	.I1(\u_spi_master/n86_14 ),
+	.S0(I_RADDR[1]),
+	.O(\u_spi_master/n86_16 )
+);
+MUX2_LUT5 \u_spi_master/n87_s11  (
+	.I0(\u_spi_master/n87_13 ),
+	.I1(\u_spi_master/n87_14 ),
+	.S0(I_RADDR[1]),
+	.O(\u_spi_master/n87_16 )
+);
+MUX2_LUT5 \u_spi_master/n88_s11  (
+	.I0(\u_spi_master/n88_13 ),
+	.I1(\u_spi_master/n88_14 ),
+	.S0(I_RADDR[1]),
+	.O(\u_spi_master/n88_16 )
+);
+MUX2_LUT5 \u_spi_master/n331_s23  (
+	.I0(\u_spi_master/n331_21 ),
+	.I1(\u_spi_master/n331_20 ),
+	.S0(\u_spi_master/tx_data_cnt [1]),
+	.O(\u_spi_master/n331_25 )
+);
+MUX2_LUT5 \u_spi_master/n331_s22  (
+	.I0(\u_spi_master/n331_23 ),
+	.I1(\u_spi_master/n331_22 ),
+	.S0(\u_spi_master/tx_data_cnt [1]),
+	.O(\u_spi_master/n331_27 )
+);
+MUX2_LUT6 \u_spi_master/n331_s21  (
+	.I0(\u_spi_master/n331_27 ),
+	.I1(\u_spi_master/n331_25 ),
+	.S0(\u_spi_master/tx_data_cnt [2]),
+	.O(\u_spi_master/n331_29 )
+);
+INV \u_spi_master/n14_s2  (
+	.I(I_RESETN),
+	.O(\u_spi_master/n14_6 )
+);
+INV \u_spi_master/rx_shift_data_7_s3  (
+	.I(SS_N_SLAVE),
+	.O(\u_spi_master/rx_shift_data_7_7 )
+);
+endmodule

@@ -1,0 +1,85 @@
+{
+ "Device" : "GW2A-18",
+ "Files" : [
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_slave_8.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_stream_bridge.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/cmd/led_cmd_pkg.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/codecs/codec_led.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/formatters/tx_arbiter.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/formatters/tx_formatter_led.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/framings/framing_pkg.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/interfaces/cmd_if_led.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/interfaces/stream_if.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/messages/msg_led.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/parsers/rx_parser_led.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/parsers/rx_router.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_rx.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_tx.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/services/led_service.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/services/main_service.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_93"
+}

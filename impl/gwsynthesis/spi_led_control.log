@@ -1,0 +1,105 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_master\spi_master.v'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_slave_8.sv'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_stream_bridge.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_stream_bridge.sv":3)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_stream_bridge.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_stream_bridge.sv":3)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\cmd\led_cmd_pkg.sv'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\codecs\codec_led.sv'
+Analyzing included file 'src\protocol\messages\msg_led.sv'("src\protocol\codecs\codec_led.sv":3)
+Back to file 'src\protocol\codecs\codec_led.sv'("src\protocol\codecs\codec_led.sv":3)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_arbiter.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_arbiter.sv":3)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_arbiter.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_arbiter.sv":3)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":6)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":6)
+Analyzing included file 'src\protocol\framings\framing_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":7)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":7)
+Analyzing included file 'src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":8)
+Analyzing included file 'src\protocol\messages\msg_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\interfaces\cmd_if_led.sv":10)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\interfaces\cmd_if_led.sv":10)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":8)
+Analyzing included file 'src\protocol\codecs\codec_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":9)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":9)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\framings\framing_pkg.sv'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\interfaces\cmd_if_led.sv'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\interfaces\stream_if.sv'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\messages\msg_led.sv'
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":6)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":6)
+Analyzing included file 'src\protocol\framings\framing_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":7)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":7)
+Analyzing included file 'src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":8)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":8)
+Analyzing included file 'src\protocol\codecs\codec_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":9)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":9)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv":6)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv":6)
+Analyzing included file 'src\protocol\framings\framing_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv":7)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv":7)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":7)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":7)
+Analyzing included file 'src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":8)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":8)
+Analyzing included file 'src\protocol\cmd\led_cmd_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":9)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":9)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":7)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":7)
+Analyzing included file 'src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":8)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":8)
+Analyzing included file 'src\protocol\cmd\led_cmd_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":9)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":9)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\led_service.sv'
+Analyzing included file 'src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\led_service.sv":3)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\led_service.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\led_service.sv":3)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\main_service.sv'
+Analyzing included file 'src\protocol\framings\framing_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\main_service.sv":6)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\main_service.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\main_service.sv":6)
+Analyzing Verilog file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv'
+Analyzing included file 'src\protocol\interfaces\stream_if.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":3)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":3)
+Analyzing included file 'src\protocol\interfaces\cmd_if_led.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":4)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":4)
+Analyzing included file 'src\protocol\framings\framing_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":5)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":5)
+Analyzing included file 'src\protocol\cmd\led_cmd_pkg.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":6)
+Back to file 'C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":6)
+Compiling module 'top_led_spi'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":8)
+Compiling module 'spi_slave_8'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_slave_8.sv":20)
+Compiling module 'spi_stream_bridge(rx_stream=stream_if_producer,tx_stream=stream_if_consumer)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_stream_bridge.sv":4)
+Compiling module 'protocol_rx(rx_stream=stream_if_consumer,led_if=cmd_if_led_protocol_rx)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_rx.sv":11)
+Compiling module 'rx_router(CMD_LED_P=8'b00110000,in_stream=stream_if_consumer,led_stream=stream_if_producer)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_router.sv":9)
+Compiling module 'rx_parser_led(in_stream=stream_if_consumer,led_if=cmd_if_led_protocol_rx)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\parsers\rx_parser_led.sv":11)
+Compiling module 'protocol_tx(led_if=cmd_if_led_protocol_tx,tx_stream=stream_if_producer)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":11)
+Compiling module 'tx_formatter_led(CMD_P=8'b00110000,led_if=cmd_if_led_protocol_tx,out_stream=stream_if_producer)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_formatter_led.sv":11)
+Compiling module 'tx_arbiter(led_stream=stream_if_consumer,out_stream=stream_if_producer)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\formatters\tx_arbiter.sv":4)
+Compiling module 'main_service(CMD_LED_P=8'b00110000)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\main_service.sv":8)
+Compiling module 'led_service(led_if=cmd_if_led_service)'("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\services\led_service.sv":4)
+NOTE  (EX0101) : Current top module is "top_led_spi"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "spi_stream_bridge" instantiated to "u_bridge" is swept in optimizing("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\top\top_led_spi.sv":45)
+WARN  (NL0002) : The module "tx_arbiter" instantiated to "u_arb" is swept in optimizing("C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\protocol_tx.sv":51)
+[95%] Generate netlist file "C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\impl\gwsynthesis\spi_led_control.vg" completed
+[100%] Generate report file "C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\impl\gwsynthesis\spi_led_control_syn.rpt.html" completed
+GowinSynthesis finish
