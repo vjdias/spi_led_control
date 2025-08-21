@@ -9,8 +9,8 @@ This folder contains Python based testbenches executed with **Verilator** and
 pytest -q
 ```
 
-A waveform (`dump.vcd`) is produced under `sim_build/` and can be inspected
-with [GTKWave](http://gtkwave.sourceforge.net/).
+Waveforms (`dump.fst`) are produced under `sim_build/<test>/` and can be
+inspected with [GTKWave](http://gtkwave.sourceforge.net/).
 
 ## Lint and format
 
