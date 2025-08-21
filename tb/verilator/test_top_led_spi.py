@@ -63,8 +63,9 @@ def test_top_led_spi(tmp_path):
         module=os.path.splitext(os.path.basename(__file__))[0],
         includes=[str(root)],
         compile_args=["-Wno-fatal"],
-        sim_build=str(tmp_path),
+        sim_build=str(Path(__file__).parent / "sim_build" / "top_led_spi"),
         parameters={"NUM_LEDS": 5},
         python_search=[str(Path(__file__).parent)],
-        verilator_generate_vcd=True,
+        waves=True,
+        plus_args=["--trace"],
     )

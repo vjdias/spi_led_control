@@ -1,0 +1,20 @@
+vlib work
+vlog ../../src/top/top_led_spi.sv
+vlog ../../src/drivers/spi_slave_8.sv
+vlog ../../src/drivers/spi_stream_bridge.sv
+vlog ../../src/services/led_service.sv
+vlog ../../src/services/main_service.sv
+vlog ../../src/protocol/protocol_rx.sv
+vlog ../../src/protocol/protocol_tx.sv
+vlog ../../src/protocol/formatters/tx_formatter_led.sv
+vlog ../../src/protocol/formatters/tx_arbiter.sv
+vlog ../../src/protocol/parsers/rx_router.sv
+vlog ../../src/protocol/parsers/rx_parser_led.sv
+vlog ../../src/protocol/codecs/codec_led.sv
+vlog ../../src/protocol/interfaces/cmd_if_led.sv
+vlog ../../src/protocol/interfaces/stream_if.sv
+vlog ../../src/protocol/messages/msg_led.sv
+vlog ../../src/protocol/framings/framing_pkg.sv
+vlog ../../src/protocol/cmd/led_cmd_pkg.sv
+vlog ../tb_top_led_spi.sv
+vsim -c tb_top_led_spi -do "run -all; quit"

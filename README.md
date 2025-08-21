@@ -184,7 +184,10 @@ do tb/modelsim/waves.do
 
 Testes executáveis usando Verilator e cocotb estão em [`tb/verilator`](tb/verilator).
 Use `pytest` para rodar as simulações rápidas e `make lint` para executar `verilator --lint-only`.
-Arquivos VCD são gerados em `sim_build/` e podem ser abertos no GTKWave.
+As execuções de `pytest` geram arquivos de onda (`dump.fst`) em `tb/verilator/sim_build/<teste>/`,
+que podem ser abertos com [GTKWave](http://gtkwave.sourceforge.net/).
+Testbenches equivalentes em SystemVerilog para ModelSim estão em [`tb/modelsim`](tb/modelsim),
+com scripts `.do` em `tb/modelsim/scripts`.
 
 ## 🔧 Síntese / FPGA
 
