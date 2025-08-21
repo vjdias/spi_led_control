@@ -26,11 +26,11 @@ module led_service #(parameter int NUM_LEDS = 5, parameter bit LED_ACTIVE_HIGH =
       if (st == S_IDLE && led_if.req_valid) req_q <= led_if.req;
       if (st == S_APPLY) begin
         rsp_q.id <= req_q.id; rsp_q.led_idx <= req_q.led_idx; rsp_q.led_val <= req_q.led_val;
-        if (req_q.led_idx < NUM_LEDS) begin
+        if (int'(req_q.led_idx) < NUM_LEDS) begin
           leds[req_q.led_idx] <= (LED_ACTIVE_HIGH) ? req_q.led_val : ~req_q.led_val; rsp_q.ok <= 1'b1;
         end else rsp_q.ok <= 1'b0;
       end
     end
   end
 endmodule
-`endif
+`endif // LED_SERVICE_SV

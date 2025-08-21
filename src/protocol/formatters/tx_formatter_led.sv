@@ -27,11 +27,16 @@ module tx_formatter_led #(
 
   state_t    st, nx;
   logic [7:0] b_id, b_idx, b_val, b_ok;
+  logic [7:0] b_id_n, b_idx_n, b_val_n, b_ok_n;
 
   always_comb begin
     // defaults
     out_stream.valid = 1'b0;
     out_stream.data  = 8'h00;
+    b_id_n           = b_id;
+    b_idx_n          = b_idx;
+    b_val_n          = b_val;
+    b_ok_n           = b_ok;
     // Pulso de aceite da resposta em S_IDLE
     led_if.rsp_ready = (st == S_IDLE) && led_if.rsp_valid;
     fmt_done         = 1'b0;
@@ -50,6 +55,10 @@ module tx_formatter_led #(
       S_DONE: begin fmt_done = 1'b1; nx = S_IDLE; end
       default: nx = S_IDLE;
     endcase
+
+    if (st == S_IDLE && led_if.rsp_valid) begin
+      codec_led_pkg::pack_rsp(led_if.rsp, b_id_n, b_idx_n, b_val_n, b_ok_n);
+    end
   end
 
   always_ff @(posedge clk or negedge rst_n) begin
@@ -60,10 +69,11 @@ module tx_formatter_led #(
       b_val <= '0;
       b_ok  <= '0;
     end else begin
-      st <= nx;
-      if (st == S_IDLE && led_if.rsp_valid) begin
-        codec_led_pkg::pack_rsp(led_if.rsp, b_id, b_idx, b_val, b_ok);
-      end
+      st   <= nx;
+      b_id <= b_id_n;
+      b_idx<= b_idx_n;
+      b_val<= b_val_n;
+      b_ok <= b_ok_n;
     end
   end
 endmodule
