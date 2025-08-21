@@ -20,7 +20,7 @@ module spi_slave_8 #(
   input  logic spi_sclk,
   input  logic spi_csn,   // ativo baixo
   input  logic spi_mosi,
-  output tri   spi_miso,  // tri-state quando CSN=1
+  output logic spi_miso,  // tri-state quando CSN=1
 
   // RX (host -> FPGA)
   output logic        rx_byte_valid,
@@ -63,6 +63,8 @@ module spi_slave_8 #(
   // ------------------------------ FIFOs ---------------------------
   localparam int RX_AW = (RX_DEPTH<=2) ? 1 : $clog2(RX_DEPTH);
   localparam int TX_AW = (TX_DEPTH<=2) ? 1 : $clog2(TX_DEPTH);
+  localparam logic [RX_AW:0] RX_DEPTH_L = RX_DEPTH[RX_AW:0];
+  localparam logic [TX_AW:0] TX_DEPTH_L = TX_DEPTH[TX_AW:0];
 
   // RX FIFO
   logic [7:0]       rx_mem [RX_DEPTH-1:0];
@@ -75,9 +77,9 @@ module spi_slave_8 #(
   logic [TX_AW:0]   tx_count;
 
   wire rx_empty = (rx_count == 0);
-  wire rx_full  = (rx_count == RX_DEPTH);
+  wire rx_full  = (rx_count == RX_DEPTH_L);
   wire tx_empty = (tx_count == 0);
-  wire tx_full  = (tx_count == TX_DEPTH);
+  wire tx_full  = (tx_count == TX_DEPTH_L);
 
   assign rx_byte_valid = ~rx_empty;
   assign tx_byte_ready = ~tx_full;

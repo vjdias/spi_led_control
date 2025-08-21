@@ -180,6 +180,12 @@ do tb/modelsim/waves.do
 
 ---
 
+## 🚀 Verilator + cocotb
+
+Testes executáveis usando Verilator e cocotb estão em [`tb/verilator`](tb/verilator).
+Use `pytest` para rodar as simulações rápidas e `make lint` para executar `verilator --lint-only`.
+Arquivos VCD são gerados em `sim_build/` e podem ser abertos no GTKWave.
+
 ## 🔧 Síntese / FPGA
 
 - Projeto testado em fluxo Gowin (Tang Primer 20K), mas o **SPI é 100% RTL** (não usa IP Gowin).  
