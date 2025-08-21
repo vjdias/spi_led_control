@@ -1,2 +1,4 @@
 tb/verilator/sim_build/
 tb/verilator/__pycache__/
+tb/modelsim/verilator/sim_build/
+tb/modelsim/verilator/__pycache__/

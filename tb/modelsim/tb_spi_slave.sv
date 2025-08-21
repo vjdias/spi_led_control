@@ -15,6 +15,7 @@ module tb_spi_slave;
   logic        tx_byte_valid = 1'b0;
   logic [7:0]  tx_byte = '0;
   wire         tx_byte_ready;
+  logic [7:0]  miso;
 
   spi_slave_8 #(.CPOL(CPOL), .CPHA(CPHA)) dut (
     .clk(clk), .rst_n(rst_n),
@@ -26,11 +27,15 @@ module tb_spi_slave;
   task automatic spi_send_byte(input [7:0] data, output [7:0] miso);
     for (int i=7; i>=0; i--) begin
       spi_mosi = data[i];
-      #5 spi_sclk = 1'b0; // leading edge
-      #5 begin
-        spi_sclk = 1'b1; // trailing edge, sample
-        miso[i] = spi_miso;
-      end
+      @(posedge clk);
+      @(posedge clk);
+      spi_sclk = 1'b0; // leading edge (shift)
+      @(posedge clk);
+      @(posedge clk);
+      spi_sclk = 1'b1; // trailing edge (sample)
+      @(posedge clk);
+      @(posedge clk);
+      miso[i] = spi_miso;
     end
   endtask
 
@@ -45,10 +50,12 @@ module tb_spi_slave;
 
     // transfer one byte 0x3C
     spi_csn = 1'b0;
-    automatic [7:0] miso;
+    @(posedge clk);
+    @(posedge clk);
     spi_send_byte(8'h3C, miso);
     spi_csn = 1'b1;
-    #20;
+    @(posedge clk);
+    @(posedge clk);
     if (!rx_byte_valid) $fatal("RX byte not captured");
     $display("MISO=%h", miso);
     $finish;
