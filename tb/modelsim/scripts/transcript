@@ -1,0 +1,15 @@
+# Reading pref.tcl
+do spi_slave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:22:54 on Aug 23,2025
+# vlog -reportprogress 300 ../../src/drivers/spi_slave_8.sv 
+# ** Error: (vlog-7) Failed to open design unit file "../../src/drivers/spi_slave_8.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 16:22:54 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./spi_slave.do line 2
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../../src/drivers/spi_slave_8.sv"
