@@ -56,7 +56,8 @@ module tb_spi_slave;
     spi_csn = 1'b1;
     @(posedge clk);
     @(posedge clk);
-    if (!rx_byte_valid) $fatal("RX byte not captured");
+      // Use explicit severity to avoid ModelSim argument warning
+      if (!rx_byte_valid) $fatal(1, "RX byte not captured");
     $display("MISO=%h", miso);
     $finish;
   end

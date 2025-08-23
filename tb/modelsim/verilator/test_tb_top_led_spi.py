@@ -26,6 +26,7 @@ def test_tb_top_led_spi():
     ]
     cmd = [
         "verilator", "-sv", "--binary",
+        f"-I{root}",
         str(root / "tb" / "modelsim" / "tb_top_led_spi.sv"),
         "--Mdir", str(build),
     ] + [str(s) for s in sources]
