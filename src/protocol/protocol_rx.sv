@@ -31,6 +31,16 @@ module protocol_rx #(
   logic       grant_led;
   logic [7:0] led_cmd_code;
   logic       led_parser_done;
+  logic       led_parser_done_q;
+
+  // Registramos o sinal de conclusão do parser para
+  // evitar laços combinacionais entre o roteador e o parser.
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+      led_parser_done_q <= 1'b0;
+    else
+      led_parser_done_q <= led_parser_done;
+  end
 
   rx_router #(
     .CMD_LED_P(led_cmd_pkg::CMD_LED)
@@ -44,7 +54,7 @@ module protocol_rx #(
     .grant_led(grant_led),
     .led_cmd_code(led_cmd_code),
     .led_stream(led_in.producer),
-    .led_parser_done(led_parser_done)
+    .led_parser_done(led_parser_done_q)
   );
 
   generate
