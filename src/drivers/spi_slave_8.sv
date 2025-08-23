@@ -36,17 +36,21 @@ module spi_slave_8 #(
   // -------------------- Sincronização p/ 'clk' --------------------
   logic sclk_meta,  sclk_sync,  sclk_prev;
   logic csn_meta,   csn_sync,   csn_prev;
-  logic mosi_meta,  mosi_sync;
+  // MOSI precisa estar estável antes da borda de amostragem.
+  // Usamos apenas um estágio de sincronização para reduzir a latência
+  // entre a mudança da linha e o ciclo em que é capturada.
+  logic mosi_sync;
 
   always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
       sclk_meta <= CPOL; sclk_sync <= CPOL; sclk_prev <= CPOL;
       csn_meta  <= 1'b1; csn_sync  <= 1'b1; csn_prev  <= 1'b1;
-      mosi_meta <= 1'b0; mosi_sync <= 1'b0;
+      mosi_sync <= 1'b0;
     end else begin
       sclk_meta <= spi_sclk; sclk_sync <= sclk_meta; sclk_prev <= sclk_sync;
       csn_meta  <= spi_csn;  csn_sync  <= csn_meta;  csn_prev  <= csn_sync;
-      mosi_meta <= spi_mosi; mosi_sync <= mosi_meta;
+      // Amostra direto MOSI em um único flip-flop para evitar atraso extra
+      mosi_sync <= spi_mosi;
     end
   end
 
