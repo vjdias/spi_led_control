@@ -9,53 +9,510 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/tb/modelsim/scripts
-vspi_slave_8
+Ycmd_if_led
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1755980412
+Z2 DXx4 work 7 msg_led 0 22 On6AZJG4^7e5jg049DU3^0
+Z3 !s110 1755986253
 !i10b 1
-!s100 Z]6nHQP_RfAgMeLDmdXjS1
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I3J<:C2J9iN3oY9NB8;WjA1
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s100 dRXZ:TfT2cZ?2jO67XMbB0
+Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8I_QPRGD`T2Rm8TIP[7?b0
+Z5 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1755759118
-8../../../src/drivers/spi_slave_8.sv
-F../../../src/drivers/spi_slave_8.sv
-!i122 2
-L0 9 217
-Z5 OV;L;2020.1;71
+w1755607435
+8../../..//src/protocol/interfaces/cmd_if_led.sv
+F../../..//src/protocol/interfaces/cmd_if_led.sv
+!i122 79
+L0 12 0
+Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1755980412.000000
-!s107 ../../../src/drivers/spi_slave_8.sv|
-!s90 -reportprogress|300|-sv|../../../src/drivers/spi_slave_8.sv|
+Z7 !s108 1755986253.000000
+Z8 !s107 ../../..//src/protocol/codecs/codec_led.sv|../../..//src/protocol/messages/msg_led.sv|../../..//src/protocol/interfaces/cmd_if_led.sv|../../..//src/protocol/framings/framing_pkg.sv|../../..//src/protocol/interfaces/stream_if.sv|../../../src/protocol/parsers/rx_parser_led.sv|
+Z9 !s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/protocol/parsers/rx_parser_led.sv|
 !i113 1
 o-sv
-Z7 tCvgOpt 0
-vtb_spi_slave
+Z10 !s92 +incdir+../../../ -sv
+Z11 tCvgOpt 0
+Xcodec_led_pkg
 R1
 R2
-!i10b 1
-!s100 >F:CQbW@7i`h:ge^CSSJE1
 R3
-IGLjkggj8hfid2MbNG8Nk80
+!i10b 1
+!s100 E1OVaz<LmV<bQ2<JFg7Ig1
 R4
+I@e]mhPAmZzR0i10C6IPAD1
+V@e]mhPAmZzR0i10C6IPAD1
 S1
 R0
-w1755790104
-8../tb_spi_slave.sv
-F../tb_spi_slave.sv
-!i122 3
-L0 2 62
-R5
+w1755544871
+8../../..//src/protocol/codecs/codec_led.sv
+F../../..//src/protocol/codecs/codec_led.sv
+!i122 79
+L0 5 0
+R6
 r1
 !s85 0
 31
-R6
-!s107 ../tb_spi_slave.sv|
-!s90 -reportprogress|300|-sv|../tb_spi_slave.sv|
+R7
+R8
+R9
 !i113 1
 o-sv
+R10
+R11
+Xframing_pkg
+R1
+R3
+!i10b 1
+!s100 m@gT`K6jRcfahTPMj?5f^1
+R4
+ITYa8lF?BR[c8LbTNS;RGJ2
+VTYa8lF?BR[c8LbTNS;RGJ2
+S1
+R0
+Z12 w1755413434
+8../../..//src/protocol/framings/framing_pkg.sv
+F../../..//src/protocol/framings/framing_pkg.sv
+!i122 79
+Z13 L0 3 0
+R6
+r1
+!s85 0
+31
 R7
+R8
+R9
+!i113 1
+o-sv
+R10
+R11
+Xled_cmd_pkg
+R1
+Z14 !s110 1755986252
+!i10b 1
+!s100 GcWkbkZobm711a:J>fZ=40
+R4
+IL1OXSAfahFB<UKbho9MX:0
+VL1OXSAfahFB<UKbho9MX:0
+S1
+R0
+R12
+8../../..//src/protocol/cmd/led_cmd_pkg.sv
+F../../..//src/protocol/cmd/led_cmd_pkg.sv
+!i122 74
+R13
+R6
+r1
+!s85 0
+31
+Z15 !s108 1755986252.000000
+Z16 !s107 ../../..//src/protocol/cmd/led_cmd_pkg.sv|../../..//src/protocol/messages/msg_led.sv|../../..//src/protocol/interfaces/cmd_if_led.sv|../../..//src/protocol/interfaces/stream_if.sv|../../../src/protocol/protocol_tx.sv|
+Z17 !s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/protocol/protocol_tx.sv|
+!i113 1
+o-sv
+R10
+R11
+vled_service
+R1
+R2
+R14
+!i10b 1
+!s100 91Pc8CWJz?=j0TnTJRWC43
+R4
+I;R8nbhYH]Q6YeoQ`7`;>o2
+R5
+S1
+R0
+Z18 w1755759118
+8../../../src/services/led_service.sv
+F../../../src/services/led_service.sv
+!i122 71
+L0 4 32
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../../..//src/protocol/messages/msg_led.sv|../../..//src/protocol/interfaces/cmd_if_led.sv|../../../src/services/led_service.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/services/led_service.sv|
+!i113 1
+o-sv
+R10
+R11
+vmain_service
+R1
+R14
+!i10b 1
+!s100 A;EPC3M^ZHiGA2BldJ>^V3
+R4
+I<;Ck=DU5an8RUZ]Y9e[zz1
+R5
+S1
+R0
+w1755607353
+8../../../src/services/main_service.sv
+F../../../src/services/main_service.sv
+!i122 72
+L0 8 52
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../../..//src/protocol/framings/framing_pkg.sv|../../../src/services/main_service.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/services/main_service.sv|
+!i113 1
+o-sv
+R10
+R11
+Xmsg_led
+R1
+R3
+!i10b 1
+!s100 >YdDE5doRhabYJEhS`4EW0
+R4
+IOn6AZJG4^7e5jg049DU3^0
+VOn6AZJG4^7e5jg049DU3^0
+S1
+R0
+R12
+8../../..//src/protocol/messages/msg_led.sv
+F../../..//src/protocol/messages/msg_led.sv
+!i122 79
+R13
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+o-sv
+R10
+R11
+vprotocol_rx
+R1
+Z19 DXx4 work 11 led_cmd_pkg 0 22 L1OXSAfahFB<UKbho9MX:0
+R14
+!i10b 1
+!s100 4WFN2km81g]=l4=?J1Zli3
+R4
+IKF]cij8;cGI?U`dZ7USnz1
+R5
+S1
+R0
+w1755608417
+8../../../src/protocol/protocol_rx.sv
+F../../../src/protocol/protocol_rx.sv
+!i122 73
+L0 11 57
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../../..//src/protocol/cmd/led_cmd_pkg.sv|../../..//src/protocol/messages/msg_led.sv|../../..//src/protocol/interfaces/cmd_if_led.sv|../../..//src/protocol/interfaces/stream_if.sv|../../../src/protocol/protocol_rx.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/protocol/protocol_rx.sv|
+!i113 1
+o-sv
+R10
+R11
+vprotocol_tx
+R1
+R19
+R14
+!i10b 1
+!s100 JdRM=egMEzl6_>:XH_0m80
+R4
+IiWcfXH];<6;C9mH;Y@4JI0
+R5
+S1
+R0
+w1755607315
+8../../../src/protocol/protocol_tx.sv
+F../../../src/protocol/protocol_tx.sv
+!i122 74
+L0 11 42
+R6
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 1
+o-sv
+R10
+R11
+vrx_parser_led
+R1
+Z20 DXx4 work 11 framing_pkg 0 22 TYa8lF?BR[c8LbTNS;RGJ2
+R2
+Z21 DXx4 work 13 codec_led_pkg 0 22 @e]mhPAmZzR0i10C6IPAD1
+R3
+!i10b 1
+!s100 l]ane[P8R5QQE>d`GLTXb1
+R4
+IcQN`Z2F]Q=CkcRO8JRc`f0
+R5
+S1
+R0
+w1755607418
+8../../../src/protocol/parsers/rx_parser_led.sv
+F../../../src/protocol/parsers/rx_parser_led.sv
+!i122 79
+L0 11 60
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+o-sv
+R10
+R11
+vrx_router
+R1
+R20
+R3
+!i10b 1
+!s100 0?CikJ3WBC@zGNI0Q[dHI1
+R4
+IX;;NX2=QifNTHY?7:kmPj3
+R5
+S1
+R0
+w1755607384
+8../../../src/protocol/parsers/rx_router.sv
+F../../../src/protocol/parsers/rx_router.sv
+!i122 78
+L0 9 73
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../..//src/protocol/framings/framing_pkg.sv|../../..//src/protocol/interfaces/stream_if.sv|../../../src/protocol/parsers/rx_router.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/protocol/parsers/rx_router.sv|
+!i113 1
+o-sv
+R10
+R11
+vspi_slave_8
+R1
+R14
+!i10b 1
+!s100 Z]6nHQP_RfAgMeLDmdXjS1
+R4
+IZ9<hKmT2VUFZG9?l5nAhf0
+R5
+S1
+R0
+R18
+8../../../src/drivers/spi_slave_8.sv
+F../../../src/drivers/spi_slave_8.sv
+!i122 69
+L0 9 217
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../../../src/drivers/spi_slave_8.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/drivers/spi_slave_8.sv|
+!i113 1
+o-sv
+R10
+R11
+vspi_stream_bridge
+R1
+R14
+!i10b 1
+!s100 M<:14PAR38Zj9@_G`>6X53
+R4
+Id4?YcJ[o;O0HeQSY65QlT3
+R5
+S1
+R0
+w1755439640
+8../../../src/drivers/spi_stream_bridge.sv
+F../../../src/drivers/spi_stream_bridge.sv
+!i122 70
+L0 4 9
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../../..//src/protocol/interfaces/stream_if.sv|../../../src/drivers/spi_stream_bridge.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/drivers/spi_stream_bridge.sv|
+!i113 1
+o-sv
+R10
+R11
+Ystream_if
+R1
+R3
+!i10b 1
+!s100 ]MWjS6l?hET9:gfOWmS_Y2
+R4
+IzUR_9QSzNQg:77EF[P@h73
+R5
+S1
+R0
+R12
+8../../..//src/protocol/interfaces/stream_if.sv
+F../../..//src/protocol/interfaces/stream_if.sv
+!i122 79
+R13
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+o-sv
+R10
+R11
+vtb_spi_slave
+R1
+!s110 1755983901
+!i10b 1
+!s100 e]G=2AdV3HNCcz<UezPT=2
+R4
+IJo00=12kL>c^>l=Z6_gb10
+R5
+S1
+R0
+w1755983462
+8../tb_spi_slave.sv
+F../tb_spi_slave.sv
+!i122 67
+Z22 L0 2 66
+R6
+r1
+!s85 0
+31
+!s108 1755983901.000000
+!s107 ../tb_spi_slave.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../tb_spi_slave.sv|
+!i113 1
+o-sv
+R10
+R11
+vtb_top_led_spi
+R1
+R3
+!i10b 1
+!s100 P0150Tl[Y:;6zA;Gohm9d1
+R4
+I[[LI1g^JLH0DzSO[zbMUT1
+R5
+S1
+R0
+w1755983447
+8../tb_top_led_spi.sv
+F../tb_top_led_spi.sv
+!i122 80
+R22
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../tb_top_led_spi.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../tb_top_led_spi.sv|
+!i113 1
+o-sv
+R10
+R11
+vtop_led_spi
+R1
+R19
+R14
+!i10b 1
+!s100 OI9lClVnmJoH8UoDT`hek3
+R4
+IG;ER9e@gQ2=P>;zSb^>G>3
+R5
+S1
+R0
+w1755694541
+8../../../src/top/top_led_spi.sv
+F../../../src/top/top_led_spi.sv
+!i122 68
+L0 8 58
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../../..//src/protocol/cmd/led_cmd_pkg.sv|../../..//src/protocol/framings/framing_pkg.sv|../../..//src/protocol/messages/msg_led.sv|../../..//src/protocol/interfaces/cmd_if_led.sv|../../..//src/protocol/interfaces/stream_if.sv|../../../src/top/top_led_spi.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/top/top_led_spi.sv|
+!i113 1
+o-sv
+R10
+R11
+vtx_arbiter
+R1
+R3
+!i10b 1
+!s100 nNelWFM4R:ST>hUchl[V`3
+R4
+IhO92dPo<Fz`?IN^eL600P1
+R5
+S1
+R0
+w1755439644
+8../../../src/protocol/formatters/tx_arbiter.sv
+F../../../src/protocol/formatters/tx_arbiter.sv
+!i122 77
+L0 4 11
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../..//src/protocol/interfaces/stream_if.sv|../../../src/protocol/formatters/tx_arbiter.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/protocol/formatters/tx_arbiter.sv|
+!i113 1
+o-sv
+R10
+R11
+vtx_formatter_led
+R1
+R20
+R2
+R21
+R3
+!i10b 1
+!s100 h^c_<2eY<h3gEXF]bPNKo0
+R4
+IFhX9RRCzZ>O6HO4fMc[NI3
+R5
+S1
+R0
+R18
+8../../../src/protocol/formatters/tx_formatter_led.sv
+F../../../src/protocol/formatters/tx_formatter_led.sv
+!i122 76
+L0 11 69
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../..//src/protocol/codecs/codec_led.sv|../../..//src/protocol/messages/msg_led.sv|../../..//src/protocol/interfaces/cmd_if_led.sv|../../..//src/protocol/framings/framing_pkg.sv|../../..//src/protocol/interfaces/stream_if.sv|../../../src/protocol/formatters/tx_formatter_led.sv|
+!s90 -reportprogress|300|+incdir+../../../|-sv|../../../src/protocol/formatters/tx_formatter_led.sv|
+!i113 1
+o-sv
+R10
+R11

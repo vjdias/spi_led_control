@@ -6,12 +6,14 @@ module tb_top_led_spi;
 
   logic clk = 0;
   always #5 clk = ~clk;
+
   logic rst_n = 0;
-  logic spi_sclk = 1'b1;
-  logic spi_csn = 1'b1;
+  logic spi_sclk = CPOL;   // idle = CPOL
+  logic spi_csn  = 1'b1;
   logic spi_mosi = 1'b0;
   wire  spi_miso;
   wire [NUM_LEDS-1:0] leds;
+
   byte req[6];
   byte dummy[6];
   byte zeros[7];
@@ -23,55 +25,43 @@ module tb_top_led_spi;
     .leds(leds)
   );
 
-    task automatic spi_send_byte(input [7:0] data, output [7:0] miso);
-      for (int i=7; i>=0; i--) begin
-        spi_mosi = data[i];
-        @(posedge clk);
-        @(posedge clk);
-        spi_sclk = 1'b0; // leading edge
-        @(posedge clk);
-        @(posedge clk);
-        spi_sclk = 1'b1; // trailing edge
-        @(posedge clk);
-        @(posedge clk);
-        miso[i] = spi_miso;
-      end
-    endtask
-
-    initial begin
-      spi_sclk = 1'b1;
-      spi_csn = 1'b1;
-      spi_mosi = 1'b0;
-      @(posedge clk);
-      @(posedge clk);
-      rst_n = 1;
-      repeat (5) @(posedge clk);
-      req[0]=8'hAA; req[1]=8'h30; req[2]=8'h11; req[3]=8'h02; req[4]=8'h01; req[5]=8'h55;
-      spi_csn = 1'b0;
-      @(posedge clk);
-      @(posedge clk);
-      for (int j=0; j<6; j++) begin
-        spi_send_byte(req[j], dummy[j]);
-      end
-      spi_csn = 1'b1;
-      @(posedge clk);
-      @(posedge clk);
-      repeat (20) @(posedge clk);
-      for (int k=0; k<7; k++) zeros[k]=8'h00;
-      spi_csn = 1'b0;
-      @(posedge clk);
-      @(posedge clk);
-      for (int j=0; j<7; j++) begin
-        spi_send_byte(zeros[j], rsp[j]);
-      end
-      spi_csn = 1'b1;
-      @(posedge clk);
-      @(posedge clk);
-      repeat (20) @(posedge clk);
-      if (leds[2] !== 1'b1)
-        $display("LED2 was not set: %b", leds);
-      else
-        $display("LED2 set correctly");
-      $finish;
+  // Task corrigida
+  task automatic spi_send_byte(input [7:0] data, output [7:0] miso);
+    for (int i=7; i>=0; i--) begin
+      if (CPHA==1'b0) spi_mosi = data[i];
+      repeat (2) @(posedge clk);
+      spi_sclk = ~spi_sclk;  // toggle
+      repeat (2) @(posedge clk);
+      if (CPHA==1'b1) spi_mosi = data[i];
+      repeat (2) @(posedge clk);
+      spi_sclk = ~spi_sclk;  // toggle back
+      repeat (2) @(posedge clk);
+      miso[i] = spi_miso;
     end
-  endmodule
+  endtask
+
+  initial begin
+    rst_n = 0;
+    repeat (5) @(posedge clk);
+    rst_n = 1;
+
+    req[0]=8'hAA; req[1]=8'h30; req[2]=8'h11; req[3]=8'h02; req[4]=8'h01; req[5]=8'h55;
+    spi_csn = 0;
+    for (int j=0; j<6; j++) spi_send_byte(req[j], dummy[j]);
+    spi_csn = 1;
+
+    repeat (20) @(posedge clk);
+
+    for (int k=0; k<7; k++) zeros[k]=8'h00;
+    spi_csn = 0;
+    for (int j=0; j<7; j++) spi_send_byte(zeros[j], rsp[j]);
+    spi_csn = 1;
+
+    repeat (20) @(posedge clk);
+    if (leds[2] !== 1'b1)
+      $display("LED2 was not set: %b", leds);
+    else
+      $display("LED2 set correctly");
+    $finish;
+  end
+endmodule

@@ -1,0 +1,253 @@
+# C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/tb/modelsim/scripts/logs/sim_tb_top_led_spi_20250823_185731.log
+# 
+# --- Include roots para resolver `include "src/..."` ---
+# Como seu código usa includes que começam em "src/...",
+# basta expor a RAIZ do projeto (3 níveis acima de scripts/)
+# set INCARGS "+incdir+../../../"
+# +incdir+../../../
+# 
+# Lib work
+# if {![file isdirectory work]} { vlib work }
+# vmap work work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# 
+# ------------------------------------------------------------------
+# Compilação
+# Observação importante:
+#  - O top_led_spi.sv já faz `include de interfaces/pacotes/mensagens.
+#  - Para evitar redefinições, NÃO compile esses headers/pacotes à parte.
+#  - Compile apenas os módulos/arquivos que NÃO são headers "incluídos".
+# ------------------------------------------------------------------
+# 
+# TOP (inclui headers/pkgs via `include)
+# vlog $INCARGS -sv ../../../src/top/top_led_spi.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/top/top_led_spi.sv 
+# -- Compiling interface stream_if
+# -- Compiling package msg_led
+# -- Compiling interface cmd_if_led
+# -- Importing package msg_led
+# -- Compiling package framing_pkg
+# -- Compiling package led_cmd_pkg
+# -- Compiling module top_led_spi
+# -- Importing package led_cmd_pkg
+# 
+# Top level modules:
+# 	top_led_spi
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Drivers / Services / Protocol (módulos)
+# vlog $INCARGS -sv ../../../src/drivers/spi_slave_8.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/drivers/spi_slave_8.sv 
+# -- Compiling module spi_slave_8
+# 
+# Top level modules:
+# 	spi_slave_8
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/drivers/spi_stream_bridge.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/drivers/spi_stream_bridge.sv 
+# -- Compiling interface stream_if
+# -- Compiling module spi_stream_bridge
+# 
+# Top level modules:
+# 	spi_stream_bridge
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/services/led_service.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/services/led_service.sv 
+# -- Compiling package msg_led
+# -- Compiling interface cmd_if_led
+# -- Importing package msg_led
+# -- Compiling module led_service
+# 
+# Top level modules:
+# 	led_service
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/services/main_service.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/services/main_service.sv 
+# -- Compiling package framing_pkg
+# -- Compiling module main_service
+# 
+# Top level modules:
+# 	main_service
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/protocol_rx.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/protocol_rx.sv 
+# -- Compiling interface stream_if
+# -- Compiling package msg_led
+# -- Compiling interface cmd_if_led
+# -- Importing package msg_led
+# -- Compiling package led_cmd_pkg
+# -- Compiling module protocol_rx
+# -- Importing package led_cmd_pkg
+# 
+# Top level modules:
+# 	protocol_rx
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/protocol_tx.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/protocol_tx.sv 
+# -- Compiling interface stream_if
+# -- Compiling package msg_led
+# -- Compiling interface cmd_if_led
+# -- Importing package msg_led
+# -- Compiling package led_cmd_pkg
+# -- Compiling module protocol_tx
+# -- Importing package led_cmd_pkg
+# 
+# Top level modules:
+# 	protocol_tx
+# End time: 18:57:32 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/codecs/codec_led.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:32 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/codecs/codec_led.sv 
+# -- Compiling package msg_led
+# -- Compiling package codec_led_pkg
+# -- Importing package msg_led
+# 
+# Top level modules:
+# 	--none--
+# End time: 18:57:33 on Aug 23,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/formatters/tx_formatter_led.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:33 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/formatters/tx_formatter_led.sv 
+# -- Compiling interface stream_if
+# -- Compiling package framing_pkg
+# -- Compiling package msg_led
+# -- Compiling interface cmd_if_led
+# -- Importing package msg_led
+# -- Compiling package codec_led_pkg
+# -- Compiling module tx_formatter_led
+# -- Importing package framing_pkg
+# -- Importing package codec_led_pkg
+# 
+# Top level modules:
+# 	tx_formatter_led
+# End time: 18:57:33 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/formatters/tx_arbiter.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:33 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/formatters/tx_arbiter.sv 
+# -- Compiling interface stream_if
+# -- Compiling module tx_arbiter
+# 
+# Top level modules:
+# 	tx_arbiter
+# End time: 18:57:33 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/parsers/rx_router.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:33 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/parsers/rx_router.sv 
+# -- Compiling interface stream_if
+# -- Compiling package framing_pkg
+# -- Compiling module rx_router
+# -- Importing package framing_pkg
+# 
+# Top level modules:
+# 	rx_router
+# End time: 18:57:33 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog $INCARGS -sv ../../../src/protocol/parsers/rx_parser_led.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:33 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../../../src/protocol/parsers/rx_parser_led.sv 
+# -- Compiling interface stream_if
+# -- Compiling package framing_pkg
+# -- Compiling package msg_led
+# -- Compiling interface cmd_if_led
+# -- Importing package msg_led
+# -- Compiling package codec_led_pkg
+# -- Compiling module rx_parser_led
+# -- Importing package framing_pkg
+# -- Importing package codec_led_pkg
+# 
+# Top level modules:
+# 	rx_parser_led
+# End time: 18:57:33 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+#    NÃO compilar à parte estes arquivos porque já são incluídos pelo TOP:
+#  ../../../src/protocol/interfaces/cmd_if_led.sv
+#  ../../../src/protocol/interfaces/stream_if.sv
+#  ../../../src/protocol/messages/msg_led.sv
+#  ../../../src/protocol/framings/framing_pkg.sv
+#  ../../../src/protocol/cmd/led_cmd_pkg.sv
+# 
+# Testbench
+# vlog $INCARGS -sv ../${TB}.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:57:33 on Aug 23,2025
+# vlog -reportprogress 300 "+incdir+../../../" -sv ../tb_top_led_spi.sv 
+# -- Compiling module tb_top_led_spi
+# 
+# Top level modules:
+# 	tb_top_led_spi
+# End time: 18:57:33 on Aug 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Simulação
+# vsim -c $TB -do "run -all"
+# vsim -c tb_top_led_spi -do "run -all" 
+# Start time: 18:57:33 on Aug 23,2025
+# Loading sv_std.std
+# Loading work.tb_top_led_spi
+# Loading work.led_cmd_pkg
+# Loading work.top_led_spi
+# Loading work.spi_slave_8
+# Loading work.stream_if
+# Loading work.spi_stream_bridge
+# Loading work.msg_led
+# Loading work.cmd_if_led
+# Loading work.protocol_rx
+# Loading work.framing_pkg
+# Loading work.rx_router
+# Loading work.protocol_tx
+# Loading work.tx_arbiter
+# Loading work.main_service
+# Loading work.led_service
+# Loading work.codec_led_pkg
+# Loading work.tx_formatter_led
+# Loading work.rx_parser_led
+# run -all
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 1985 ns ###############
+#   Active process: /tb_top_led_spi/dut/u_proto_rx/u_router/#ALWAYS#37 @ sub-iteration 0
+#     Source: ../../../src/protocol/protocol_rx.sv:37
+#   Active process: /tb_top_led_spi/dut/u_proto_rx/u_router/#IMPLICIT-WIRE(grant_led)#25 @ sub-iteration 1
+#     Source: ../../../src/protocol/protocol_rx.sv:37
+#     Assigning reg to (val=0)
+#   Active process: /tb_top_led_spi/dut/u_proto_rx/u_router/#ALWAYS#37 @ sub-iteration 2
+#     Source: ../../../src/protocol/protocol_rx.sv:37
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 1985 ns.
+# 
+# Desliga log
+# finish_logging
+# End time: 18:58:04 on Aug 23,2025, Elapsed time: 0:00:31
+# Errors: 1, Warnings: 0
