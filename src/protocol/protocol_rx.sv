@@ -29,6 +29,7 @@ module protocol_rx #(
   // Router ↔ Parser LED
   stream_if led_in(clk, rst_n);
   logic       grant_led;
+  logic       grant_led_q;
   logic [7:0] led_cmd_code;
   logic       led_parser_done;
   logic       led_parser_done_q;
@@ -40,6 +41,15 @@ module protocol_rx #(
       led_parser_done_q <= 1'b0;
     else
       led_parser_done_q <= led_parser_done;
+  end
+
+  // Também registramos grant_led para quebrar possíveis
+  // caminhos combinacionais com o parser LED.
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+      grant_led_q <= 1'b0;
+    else
+      grant_led_q <= grant_led;
   end
 
   rx_router #(
@@ -62,7 +72,7 @@ module protocol_rx #(
       rx_parser_led u_p_led (
         .clk(clk), .rst_n(rst_n),
         .cmd_code(led_cmd_code),
-        .grant(grant_led),
+        .grant(grant_led_q),
         .in_stream(led_in.consumer),
         .led_if(led_if),
         .parser_done(led_parser_done)

@@ -33,7 +33,7 @@
     "SubInsts" : [
      {
       "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_rx.sv",
-      "InstLine" : 37,
+      "InstLine" : 57,
       "InstName" : "u_router",
       "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/parsers/rx_router.sv",
       "ModuleLine" : 9,
@@ -41,7 +41,7 @@
      },
      {
       "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/protocol_rx.sv",
-      "InstLine" : 52,
+      "InstLine" : 72,
       "InstName" : "G_LED_PARSER.u_p_led",
       "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/protocol/parsers/rx_parser_led.sv",
       "ModuleLine" : 11,
