@@ -4,7 +4,6 @@
     <Version>beta</Version>
     <Device id="GW2A-18" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
     <FileList>
-        <File path="C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_master\spi_master.v" type="verilog"/>
         <File path="C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_slave_8.sv" type="verilog"/>
         <File path="C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\drivers\spi_stream_bridge.sv" type="verilog"/>
         <File path="C:\Users\Valdir\Documents\Develop\fpga\tangPrime20k\spi_led_control\src\protocol\cmd\led_cmd_pkg.sv" type="verilog"/>

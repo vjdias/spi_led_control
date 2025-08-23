@@ -2,10 +2,6 @@
  "Device" : "GW2A-18",
  "Files" : [
   {
-   "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_slave_8.sv",
    "Type" : "verilog"
   },

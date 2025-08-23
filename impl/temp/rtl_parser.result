@@ -1,23 +1,5 @@
 [
  {
-  "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
-  "InstLine" : 408,
-  "InstName" : "SPI_MASTER_Top",
-  "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
-  "ModuleLine" : 408,
-  "ModuleName" : "SPI_MASTER_Top",
-  "SubInsts" : [
-   {
-    "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
-    "InstLine" : 599,
-    "InstName" : "u_spi_master",
-    "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_master/spi_master.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "~spi_master.SPI_MASTER_Top"
-   }
-  ]
- },
- {
   "InstFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/top/top_led_spi.sv",
   "InstLine" : 8,
   "InstName" : "top_led_spi",
@@ -30,7 +12,7 @@
     "InstLine" : 21,
     "InstName" : "u_spi",
     "ModuleFile" : "C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/src/drivers/spi_slave_8.sv",
-    "ModuleLine" : 20,
+    "ModuleLine" : 9,
     "ModuleName" : "spi_slave_8"
    },
    {
