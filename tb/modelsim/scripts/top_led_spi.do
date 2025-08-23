@@ -16,7 +16,8 @@ if {![file isdirectory work]} { vlib work }
 vmap work work
 
 # Compila (ajuste a ordem se precisar)
-vlog -sv ../../../src/top/top_led_spi.sv
+# Include root to resolve `include"src/..."` directives
+vlog +incdir+../../../ -sv ../../../src/top/top_led_spi.sv
 vlog -sv ../../../src/drivers/spi_slave_8.sv
 vlog -sv ../../../src/drivers/spi_stream_bridge.sv
 vlog -sv ../../../src/services/led_service.sv
