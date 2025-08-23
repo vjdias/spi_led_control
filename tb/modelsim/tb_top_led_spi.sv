@@ -25,16 +25,17 @@ module tb_top_led_spi;
     .leds(leds)
   );
 
-  // Task corrigida
+  // SPI transaction helper aligned with CPOL=1/CPHA=1 timing
+  // Data is presented before the leading edge, then the clock toggles
+  // low/high with two system-clock cycles between edges so the DUT's
+  // synchronizers can capture each transition.
   task automatic spi_send_byte(input [7:0] data, output [7:0] miso);
-    for (int i=7; i>=0; i--) begin
-      if (CPHA==1'b0) spi_mosi = data[i];
+    for (int i = 7; i >= 0; i--) begin
+      spi_mosi = data[i];
       repeat (2) @(posedge clk);
-      spi_sclk = ~spi_sclk;  // toggle
+      spi_sclk = ~spi_sclk;  // leading edge (shift)
       repeat (2) @(posedge clk);
-      if (CPHA==1'b1) spi_mosi = data[i];
-      repeat (2) @(posedge clk);
-      spi_sclk = ~spi_sclk;  // toggle back
+      spi_sclk = ~spi_sclk;  // trailing edge (sample)
       repeat (2) @(posedge clk);
       miso[i] = spi_miso;
     end
