@@ -1,57 +1,8 @@
-# vsim work.tb_top_led_spi 
-# Start time: 18:55:58 on Aug 23,2025
-# Loading sv_std.std
-# Loading work.tb_top_led_spi
-# Loading work.led_cmd_pkg
-# Loading work.top_led_spi
-# Loading work.spi_slave_8
-# Loading work.stream_if
-# Loading work.spi_stream_bridge
-# Loading work.msg_led
-# Loading work.cmd_if_led
-# Loading work.protocol_rx
-# Loading work.framing_pkg
-# Loading work.rx_router
-# Loading work.protocol_tx
-# Loading work.tx_arbiter
-# Loading work.main_service
-# Loading work.led_service
-# Loading work.codec_led_pkg
-# Loading work.tx_formatter_led
-# Loading work.rx_parser_led
+# Reading pref.tcl
 ls
 # logs          spi_slave_waves.do    transcript  work  
 # modelsim.ini  top_led_spi.do        utils             
 # spi_slave.do  top_led_spi_waves.do  vsim.wlf          
-do top_led_spi_waves.do
-run -all
-#############  Autofindloop Analysis  ###############
-#############  Loop found at time 1985 ns ###############
-#   Active process: /tb_top_led_spi/dut/u_proto_rx/u_router/#ALWAYS#37 @ sub-iteration 0
-#     Source: ../../../src/protocol/protocol_rx.sv:37
-#   Active process: /tb_top_led_spi/dut/u_proto_rx/u_router/#IMPLICIT-WIRE(grant_led)#25 @ sub-iteration 1
-#     Source: ../../../src/protocol/protocol_rx.sv:37
-#     Assigning reg to (val=0)
-#   Active process: /tb_top_led_spi/dut/u_proto_rx/u_router/#ALWAYS#37 @ sub-iteration 2
-#     Source: ../../../src/protocol/protocol_rx.sv:37
-################# END OF LOOP #################
-# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 1985 ns.
-ls
-# logs          spi_slave_waves.do    transcript  work  
-# modelsim.ini  top_led_spi.do        utils             
-# spi_slave.do  top_led_spi_waves.do  vsim.wlf          
-do top_led_spi.do
-# C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/tb/modelsim/scripts
-# ** Error: Cannot change directory while a simulation is in progress.
-# Use the "quit -sim" command to unload the design first.
-# Error in macro ./top_led_spi.do line 5
-# Cannot change directory while a simulation is in progress.
-# Use the "quit -sim" command to unload the design first.
-#     while executing
-# "cd $HERE"
-quit -sim
-# End time: 18:57:27 on Aug 23,2025, Elapsed time: 0:01:29
-# Errors: 2, Warnings: 0
 do top_led_spi.do
 # C:/Users/Valdir/Documents/Develop/fpga/tangPrime20k/spi_led_control/tb/modelsim/scripts
 # reading modelsim.ini
