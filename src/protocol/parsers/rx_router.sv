@@ -53,8 +53,14 @@ module rx_router #(
       S_IDLE: if (in_stream.valid && in_stream.data == HDR_REQ) begin in_stream.ready = 1'b1; nx = S_CMD; end
       S_CMD:  if (in_stream.valid) begin in_stream.ready = 1'b1; req_cmd_valid = 1'b1; req_cmd_code = in_stream.data; nx = S_ROUTE; end
       S_ROUTE: if (allow_grant) begin
-        if (cmd_latched == CMD_LED_P) begin grant_led = 1'b1; nx = S_STREAM; end
-        else begin grant_led = 1'b1; nx = S_STREAM; end // placeholder para outros domínios
+        if (cmd_latched == CMD_LED_P) begin
+          grant_led = 1'b1;
+          nx        = S_STREAM;
+        end else begin
+          // Comando desconhecido: não concede grant e encerra frame
+          frame_done = 1'b1;
+          nx         = S_IDLE;
+        end
       end
       S_STREAM: begin
         grant_led        = 1'b1;
