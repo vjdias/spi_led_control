@@ -27,16 +27,14 @@ module tb_spi_slave;
     .tx_byte_valid(tx_byte_valid), .tx_byte(tx_byte), .tx_byte_ready(tx_byte_ready)
   );
 
-  // Task corrigida
+  // SPI byte transfer helper following CPOL=1/CPHA=1 timing
   task automatic spi_send_byte(input [7:0] data, output [7:0] miso);
-    for (int i=7; i>=0; i--) begin
-      if (CPHA==1'b0) spi_mosi = data[i];
+    for (int i = 7; i >= 0; i--) begin
+      spi_mosi = data[i];
       repeat (2) @(posedge clk);
-      spi_sclk = ~spi_sclk;
+      spi_sclk = ~spi_sclk;  // leading edge
       repeat (2) @(posedge clk);
-      if (CPHA==1'b1) spi_mosi = data[i];
-      repeat (2) @(posedge clk);
-      spi_sclk = ~spi_sclk;
+      spi_sclk = ~spi_sclk;  // trailing edge
       repeat (2) @(posedge clk);
       miso[i] = spi_miso;
     end
