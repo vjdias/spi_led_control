@@ -46,7 +46,8 @@ module tb_top_led_spi;
     repeat (5) @(posedge clk);
     rst_n = 1;
 
-    req[0]=8'hAA; req[1]=8'h30; req[2]=8'h11; req[3]=8'h02; req[4]=8'h01; req[5]=8'h55;
+    // Envia comando para acender o LED de índice 2 (ID=0x02)
+    req[0]=8'hAA; req[1]=8'h30; req[2]=8'h02; req[3]=8'h02; req[4]=8'h01; req[5]=8'h55;
     spi_csn = 0;
     for (int j=0; j<6; j++) spi_send_byte(req[j], dummy[j]);
     spi_csn = 1;
@@ -60,9 +61,9 @@ module tb_top_led_spi;
 
     repeat (20) @(posedge clk);
     if (leds[2] !== 1'b1)
-      $display("LED2 was not set: %b", leds);
+      $display("FAIL: LED2 not set - leds=%b", leds);
     else
-      $display("LED2 set correctly");
+      $display("PASS: LED2 set correctly");
     $finish;
   end
 endmodule
